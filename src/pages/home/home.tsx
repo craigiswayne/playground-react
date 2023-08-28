@@ -1,14 +1,14 @@
 import './styles.scss';
 interface Props {
-    links: string[];
+    routes: { pathName: string }[];
 }
-const Home = ({links}: Props) => {
+const Home = ({routes}: Props) => {
     return <>
         <h1>Home Page</h1>
         <ul>
             {
-                links.map(link => (
-                    <li key={link}><a href={link}>{link}</a></li>
+                routes.map(route => (
+                    <li key={route.pathName}><a href={route.pathName}>{route.pathName}</a></li>
                 ))
             }
         </ul>
